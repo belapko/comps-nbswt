@@ -1,0 +1,62 @@
+.arrow {
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    color: var(--color-dark);
+}
+
+.arrowUp {
+    rotate: 180deg;
+    color: var(--color-dark) !important;
+}
+
+.button {
+    min-width: 100px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: none;
+    font-size: var(--font-small);
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.button:hover, .button:hover .arrow {
+    color: var(--color-dark);
+    cursor: pointer;
+}
+
+/*Тёмная тема*/
+.button:hover.dark {
+    background-color: var(--accent-dark);
+}
+
+.active.dark {
+    color: var(--color-dark);
+    background-color: var(--accent-dark);
+}
+
+.button.dark {
+    border: 2px solid var(--accent-dark);
+}
+
+.dark {
+    color: var(--accent-dark);
+}
+
+/*Светлая тема*/
+.button:hover.light {
+    background-color: var(--accent-light);
+}
+
+.active.light {
+    color: var(--color-dark);
+    background-color: var(--accent-light);
+}
+
+.button.light {
+    border: 2px solid var(--accent-light);
+}
+
+.light {
+    color: var(--accent-light);
+}

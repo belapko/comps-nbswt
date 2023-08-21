@@ -1,0 +1,71 @@
+.inputForm {
+    min-width: 100px;
+    position: relative;
+}
+
+.label {
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+    left: 23px;
+    padding: 0 5px;
+    font-size: var(--font-small);
+    font-weight: var(--font-bold);
+    display: inline-block;
+    z-index: 1;
+}
+
+.label:after {
+    content: ' ';
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.input {
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.input:disabled {
+    opacity: 0.5;
+}
+
+.input.error {
+    border: 2px solid red;
+    animation: bounce ease-in-out 200ms;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Тёмная тема */
+.label.dark {
+    background-color: var(--secondary-dark);
+    color: var(--accent-dark);
+}
+
+.input.dark {
+    color: var(--color-dark);
+    background-color: var(--secondary-dark);
+    border: 2px solid var(--accent-dark);
+}
+
+/* Светлая тема */
+.label.light {
+    background-color: var(--secondary-light);
+    color: var(--accent-light);
+}
+
+.input.light {
+    color: var(--color-light);
+    background-color: var(--secondary-light);
+    border: 2px solid var(--accent-light);
+}
