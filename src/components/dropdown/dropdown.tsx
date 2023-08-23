@@ -4,11 +4,13 @@ import '../../index.css';
 import styles from './dropdown.module.css';
 import cn from 'classnames';
 import {searchQueryFilter} from '../../util/searchQueryFilter';
+import Carousel from "../carousel/carousel";
 
 export interface IOption {
     _id?: string;
     title?: string;
     search?: string;
+    photo?: string;
 }
 
 export interface IDropdown {
@@ -21,6 +23,7 @@ export interface IDropdown {
     create?: boolean;
     onCreate?: () => void;
     multiple?: boolean;
+    photo?: boolean;
 }
 
 const Dropdown: FC<IDropdown> = ({
@@ -33,6 +36,7 @@ const Dropdown: FC<IDropdown> = ({
                                      create = false,
                                      onCreate,
                                      multiple = false,
+                                     photo
                                  }) => {
     const [active, setActive] = useState<boolean>(false);
     const [query, setQuery] = useState<string>('');
@@ -52,16 +56,22 @@ const Dropdown: FC<IDropdown> = ({
                 {search &&
                     <input className={cn(styles.input, styles[theme])} type='text' placeholder='Поиск...' value={query}
                            onChange={handleChangeQuery}/>}
-                <ul className={cn(styles.ul)}>
+                <ul className={cn(styles.ul, styles[theme])}>
                     {
                         searchQueryFilter(query, list).map((element: IOption) =>
-                            <li className={cn(
-                                styles.li, styles[theme], multiple ? (chosen as IOption[]).find(obj => obj._id)
-                                    : (element._id === (chosen as IOption)._id) && styles.chosen)}
-                                key={element._id} onClick={() => {
-                                setChosen(element);
-                                setActive(false);
-                            }}>{element.title}</li>)
+                            <li className={cn(styles.li, styles[theme], multiple ? (chosen as IOption[]).find(obj => obj._id)
+                                : (element._id === (chosen as IOption)._id) && styles.chosen)} key={element._id}
+                                onClick={() => {
+                                    setChosen(element);
+                                    setActive(false);
+                                }}>
+                                {!photo ? element.title :
+                                    <div className={styles.dropdownImage}>
+                                        <img className={styles.image} src={element.photo} alt={element.title}/>
+                                        <p className={cn(styles.p, styles[theme])}>{element.title}</p>
+                                    </div>
+                                }
+                            </li>)
                     }
                 </ul>
                 {create && <button className={cn(styles.button, styles[theme])} onClick={onCreate}>Создать</button>}

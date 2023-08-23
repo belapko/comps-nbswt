@@ -11,7 +11,7 @@
 }
 
 .button {
-    min-width: 100px;
+    width: 100%;
     padding: 5px 10px;
     border-radius: 5px;
     outline: none;
@@ -129,6 +129,8 @@
 .ul {
     list-style: none;
     padding: 5px;
+    overflow-y: auto;
+    max-height: 250px;
 }
 
 .li {
@@ -159,4 +161,57 @@
 
 .chosen.light {
     background-color: var(--accent-light);
+}
+
+.ul::-webkit-scrollbar {
+    width: 7px;
+}
+
+.ul::-webkit-scrollbar-track {
+    border-radius: 25px;
+}
+
+.ul.dark::-webkit-scrollbar-track {
+    background-color: var(--secondary-dark);
+}
+
+.ul.light::-webkit-scrollbar-track {
+    background-color: var(--secondary-light);
+}
+
+.ul::-webkit-scrollbar-thumb {
+    border-radius: 25px;
+}
+
+.ul.dark::-webkit-scrollbar-thumb {
+    background-color: var(--accent-dark);
+}
+
+.ul.light::-webkit-scrollbar-thumb {
+    background-color: var(--accent-light);
+}
+
+.dropdownImage {
+    display: flex;
+    gap: 10px;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+.p {
+    font-size: var(--font-small);
+}
+
+.p.dark {
+    color: var(--color-dark);
+}
+
+.p.light {
+    color: var(--color-light);
 }

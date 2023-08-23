@@ -8,6 +8,7 @@ export interface IInput {
     placeholder?: string;
     label?: string;
     type?: React.HTMLInputTypeAttribute;
+    accept?: string;
     disabled?: boolean;
     error?: boolean;
 }

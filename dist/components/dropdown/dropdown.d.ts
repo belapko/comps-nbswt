@@ -4,6 +4,7 @@ export interface IOption {
     _id?: string;
     title?: string;
     search?: string;
+    photo?: string;
 }
 export interface IDropdown {
     list: IOption[];
@@ -15,6 +16,7 @@ export interface IDropdown {
     create?: boolean;
     onCreate?: () => void;
     multiple?: boolean;
+    photo?: boolean;
 }
 declare const Dropdown: FC<IDropdown>;
 export default Dropdown;

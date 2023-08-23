@@ -1,0 +1,72 @@
+.carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.slide {
+    border-radius: 5px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+.slideHidden {
+    display: none;
+}
+
+.arrow {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+.arrow.dark {
+    color: var(--color-dark);
+}
+
+.arrow.light {
+    color: var(--color-light);
+}
+
+.arrowLeft {
+    left: 10px;
+}
+
+.arrowRight {
+    right: 10px;
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator.dark {
+    background-color: var(--accent-dark);
+}
+
+.indicator.light {
+    background-color: var(--accent-light);
+}
+
+.indicatorInactive.dark {
+    background-color: var(--color-dark);
+}
+
+.indicatorInactive.light {
+    background-color: var(--color-light);
+}
