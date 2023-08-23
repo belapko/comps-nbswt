@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    align-items: end;
+    gap: 10px;
+    font-size: var(--font-small);
+}
+
+.dark {
+    color: var(--color-dark);
+}
+
+.light {
+    color: var(--color-light);
+}
+
+.input {
+    padding: 5px 10px 0 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: var(--font-small);
+}
+
+.input.dark {
+    border-bottom: 1px solid var(--accent-dark);
+    background-color: var(--secondary-dark-lighter);
+}
+
+.input.light {
+    border-bottom: 1px solid var(--accent-light);
+    background-color: var(--secondary-light-lighter);
+}

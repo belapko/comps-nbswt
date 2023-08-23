@@ -1,0 +1,74 @@
+.switch {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hide {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.label {
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.label:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.label.dark {
+    border: 1px solid var(--accent-dark);
+    background-color: var(--secondary-dark-lighter);
+}
+
+.label.dark:after {
+    background-color: var(--color-dark);
+}
+
+.label.light {
+    border: 1px solid var(--accent-light);
+    background-color: var(--secondary-light-lighter);
+}
+
+.label.light:after {
+    background-color: var(--color-light);
+}
+
+.input:checked + .label.dark {
+    background-color: var(--accent-dark);
+}
+
+.input:checked + .label.light {
+    background-color: var(--accent-light);
+}
+
+.input:checked + .label:after {
+    left: calc(100% - 1px);
+    transform: translateX(-100%);
+}
+
+.label:active:after {
+    width: 26px;
+}
+
+.p.dark {
+    color: var(--color-dark);
+}
+
+.p.light {
+    color: var(--color-light);
+}

@@ -65,6 +65,7 @@ export const LightSearchDropdown: Story = {
         title: 'Выбрать что-то',
         chosen: {},
         setChosen: () => {},
+        search: true,
     },
 };
 
@@ -86,7 +87,9 @@ export const DarkSearchAddDropdown: Story = {
               ],
         theme: 'dark',
         title: 'Выбрать что-то',
-        chosen: {},
+        chosen: {_id: '1', title: 'title 1'},
         setChosen: () => {},
+        search: true,
+        create: true,
     },
 };

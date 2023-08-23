@@ -1,15 +1,20 @@
 import { FC } from 'react';
 import '../../index.css';
-interface IOption {
+export interface IOption {
     _id?: string;
     title?: string;
+    search?: string;
 }
 export interface IDropdown {
     list: IOption[];
     theme: string;
     title: string;
-    chosen: IOption;
-    setChosen: () => void;
+    chosen: IOption | IOption[];
+    setChosen: (obj: object) => void;
+    search?: boolean;
+    create?: boolean;
+    onCreate?: () => void;
+    multiple?: boolean;
 }
 declare const Dropdown: FC<IDropdown>;
 export default Dropdown;

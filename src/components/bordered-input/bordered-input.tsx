@@ -3,7 +3,7 @@ import '../../index.css';
 import styles from './bordered-input.module.css';
 import cn from 'classnames';
 
-export interface IBorderedInput {
+export interface IInput {
     theme: string;
     value: string;
     onChange: () => void;
@@ -15,7 +15,7 @@ export interface IBorderedInput {
     error?: boolean;
 }
 
-const BorderedInput: FC<IBorderedInput> = ({
+const BorderedInput: FC<IInput> = ({
                                                value,
                                                onChange,
                                                onBlur,

@@ -9,10 +9,18 @@
     --accent-dark: #00ADB5;
 
     --secondary-light: #DBE2EF;
-    --secondary-dark: #393E46;
+    --secondary-light-lighter: #e9e9ec;
+    --secondary-dark: #393e46;
+    --secondary-dark-lighter: rgba(255, 255, 255, 0.1);
 
     --font-small: 14px;
     --font-medium: 16px;
     --font-large: 18px;
     --font-bold: 600;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: var(--font-small);
 }

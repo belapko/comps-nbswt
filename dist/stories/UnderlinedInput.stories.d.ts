@@ -10,5 +10,4 @@ declare const meta: {
 };
 export default meta;
 type Story = StoryObj<typeof meta>;
-export declare const Light: Story;
-export declare const Dark: Story;
+export declare const Default: Story;

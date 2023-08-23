@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import '../../index.css';
-export interface IBorderedInput {
+export interface IInput {
     theme: string;
     value: string;
     onChange: () => void;
@@ -11,5 +11,5 @@ export interface IBorderedInput {
     disabled?: boolean;
     error?: boolean;
 }
-declare const BorderedInput: FC<IBorderedInput>;
+declare const BorderedInput: FC<IInput>;
 export default BorderedInput;

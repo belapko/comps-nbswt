@@ -36,9 +36,9 @@
     opacity: 0.5;
 }
 
-.input.error {
-    border: 2px solid red;
-    animation: bounce ease-in-out 200ms;
+.error {
+    border: 2px solid red !important;
+    animation: bounce ease-in-out 300ms;
 }
 
 @keyframes bounce {
