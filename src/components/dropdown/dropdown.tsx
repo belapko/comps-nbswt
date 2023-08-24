@@ -59,9 +59,20 @@ const Dropdown: FC<IDropdown> = ({
                 <ul className={cn(styles.ul, styles[theme])}>
                     {
                         searchQueryFilter(query, list).map((element: IOption) =>
-                            <li className={cn(styles.li, styles[theme], multiple ? (chosen as IOption[]).find(obj => obj._id)
+                            <li className={cn(styles.li, styles[theme], multiple ? (chosen as IOption[]).find(obj => (obj._id === element._id)) && styles.chosen
                                 : (element._id === (chosen as IOption)._id) && styles.chosen)} key={element._id}
-                                onClick={() => {
+                                onClick={multiple ?
+                                    () => setChosen((chosen:IOption[]) => {
+                                        const elementIndexInArray = (chosen as IOption[]).indexOf(element);
+                                        if (elementIndexInArray !== -1) {
+                                            chosen.splice((chosen as IOption[]).indexOf(element), 1);
+                                            return [...chosen];
+                                        } else {
+                                            return [...chosen, element];
+                                        }
+                                    })
+                                    :
+                                () => {
                                     setChosen(element);
                                     setActive(false);
                                 }}>
