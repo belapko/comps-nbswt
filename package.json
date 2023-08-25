@@ -1,6 +1,6 @@
 {
   "name": "comps-nbswt",
-  "version": "1.0.33",
+  "version": "1.0.35",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {

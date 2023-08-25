@@ -1,6 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react';
+import {IExtendedTabs} from "../components/extended-tabs/extended-tabs";
+import {ITab} from "../components/extended-tabs/extended-tabs";
 
 import ExtendedTabs from '../components/extended-tabs/extended-tabs';
+import {useEffect, useState} from "react";
 
 const meta = {
     title: 'Example/ExtendedTabs',
@@ -36,22 +39,31 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 
 const ExtendedTabsExample = ({theme}) => {
-    const tabs = [
-        {
-            name: 'test1',
-            onClick: () => {},
-        },
-        {
-            name: 'test2',
-            onClick: () => console.log('Я вторая'),
-        },
-        {
-            name: 'test3',
-            onClick: () => {},
-        },
-    ]
+    const [tabs, setTabs] = useState([]);
 
-    return <ExtendedTabs tabs={tabs} theme={theme}/>
+    useEffect(() => {
+        setTabs([
+            {
+                name: 'test1',
+                onClick: () => {},
+            } as ITab,
+            {
+                name: 'test2',
+                onClick: () => {},
+                isCanClosed: true,
+                isInWindowTitle: true,
+                setWindowTitle: () => {},
+            } as ITab,
+            {
+                name: 'test3',
+                onClick: () => {},
+            } as ITab,
+        ])
+    }, []);
+
+
+
+    return <ExtendedTabs tabs={tabs} theme={theme} setTabs={setTabs}/>
 };
 
 export const DefaultDarkTabs : Story = {

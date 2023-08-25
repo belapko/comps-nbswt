@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import '../../index.css';
-interface ITab {
+export interface ITab {
     isCanClosed?: boolean;
     isInWindowTitle?: boolean;
     isIconFirst?: boolean;

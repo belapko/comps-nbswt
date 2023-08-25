@@ -1,6 +1,9 @@
+
+
 .navbar {
     width: 100%;
-    padding: 10px 0 5px 0;
+    padding-top: 5px;
+    display: flex;
 }
 
 .dark {
@@ -15,12 +18,18 @@
 
 
 .tab {
+    min-width: 50px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
     text-decoration: none;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    padding: 5px 10px;
+    padding: 5px;
     font-size: var(--font-medium);
     cursor: pointer;
+    transition: all ease 0.2s;
 }
 
 .tab.dark:hover:not(.active) {
@@ -49,4 +58,26 @@
 
 .active.light {
     background-color: var(--accent-light);
+}
+
+.active {
+    cursor: default;
+}
+
+.cross {
+    z-index: 2;
+    border-radius: 50%;
+    padding: 1px;
+    background-color: transparent;
+    font-weight: var(--font-bold);
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.cross.dark:hover {
+    background-color: var(--secondary-dark-lighter);
+}
+
+.cross.dark:hover {
+    background-color: var(--secondary-dark-lighter);
 }
