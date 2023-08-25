@@ -1,0 +1,52 @@
+.navbar {
+    width: 100%;
+    padding: 10px 0 5px 0;
+}
+
+.dark {
+    color: var(--color-dark);
+    background-color: var(--secondary-dark);
+}
+
+.light {
+    color: var(--color-light);
+    background-color: var(--secondary-light);
+}
+
+
+.tab {
+    text-decoration: none;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 5px 10px;
+    font-size: var(--font-medium);
+    cursor: pointer;
+}
+
+.tab.dark:hover:not(.active) {
+    background-color: var(--secondary-dark-lighter);
+}
+
+.tab.dark {
+    border: 1px solid var(--secondary-dark-lighter);
+    border-bottom: none;
+    background-color: var(--secondary-dark);
+}
+
+.active.dark {
+    background-color: var(--accent-dark);
+}
+
+.tab.light:hover:not(.active) {
+    background-color: var(--secondary-light-lighter);
+}
+
+.tab.light {
+    border: 1px solid var(--secondary-light-lighter);
+    border-bottom: none;
+    background-color: var(--secondary-light);
+}
+
+.active.light {
+    background-color: var(--accent-light);
+}
