@@ -79,5 +79,6 @@
                 "moduleDirectory": ["node_modules", "src/"]
             }
         }
-    }
+    },
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }]
 }

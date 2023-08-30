@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 import '../../index.css';
 export interface IButton {
     theme: string;

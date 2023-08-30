@@ -5,6 +5,7 @@ import UnderlinedInput from './components/underlined-input/underlined-input';
 import Toggler from './components/toggler/toggler';
 import Carousel from './components/carousel/carousel';
 import ExtendedTabs from './components/extended-tabs/extended-tabs';
+import Checkbox from './components/checkbox/checkbox';
 
 export {
     Button,
@@ -14,4 +15,5 @@ export {
     Toggler,
     Carousel,
     ExtendedTabs,
+    Checkbox,
 };
