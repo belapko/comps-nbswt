@@ -7,12 +7,13 @@ import cn from 'classnames';
 
 export interface ICarousel {
     photos?: string[];
+    alt?: string;
     theme: string;
     width: string;
     height: string;
 }
 
-const Carousel: FC<ICarousel> = ({ photos = [], theme, width, height }) => {
+const Carousel: FC<ICarousel> = ({ photos = [], alt='Карусель фотографий', theme, width, height }) => {
     const [slide, setSlide] = useState(0);
 
     const nextSlide = () => {
@@ -36,7 +37,7 @@ const Carousel: FC<ICarousel> = ({ photos = [], theme, width, height }) => {
                         height={height}
                         key={index}
                         src={photo}
-                        alt='Фото занятия'
+                        alt={alt}
                     />
                 ))}
                 <ArrowRight className={cn(styles.arrow, styles.arrowRight, styles[theme])} onClick={nextSlide} />
