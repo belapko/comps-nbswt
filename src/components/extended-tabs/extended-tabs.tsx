@@ -4,6 +4,11 @@ import styles from './extended-tabs.module.css';
 import cn from 'classnames';
 import Cross from './assets/cross.svg';
 
+type SubTab = {
+    name: string;
+    onClick: () => void;
+}
+
 export interface ITab {
     id?: number;
     isCanClosed?: boolean; // Можно ли закрыть вкладку. Добавляет кнопку закрытия вкладки. (по умолчанию – false)
@@ -12,7 +17,7 @@ export interface ITab {
     setWindowTitle?: () => void;
     isIconFirst?: boolean; // Ставим ли иконку первой (по умолчанию - false)
     colorsSettings?: object; // Настройки цвета
-    menu?: object[]; // Меню вкладки
+    menu?: SubTab[]; // Меню вкладки
     path: string; // Путь как указан в приложении для выделения активной вкладки
     name: string; // Название вкладки
     onClick: () => void;
@@ -46,13 +51,17 @@ const Tab: FC<ITab> = ({
     };
 
     return (
-        <a
-            className={cn(styles.tab, styles[theme], active && styles.active)}
-            onClick={active ? undefined : handleClick}
-        >
+        <a className={cn(styles.tab, styles[theme], active && styles.active)} onClick={handleClick}>
             <span>{name}</span>
+            {menu && (
+                    <div className={cn(styles.subMenu, styles[theme])}>
+                        {menu.map((subTab, index) => (
+                            <a className={cn(styles.subMenuTab, styles[theme])} key={index} onClick={subTab.onClick}>{subTab.name}</a>
+                        ))}
+                    </div>
+            )}
             {isCanClosed && (
-                <span onClick={() => setClose && setClose(id)}>
+                <span className={styles.crossBox} onClick={() => setClose && setClose(id)}>
                     <Cross className={cn(styles.cross, styles[theme])} />
                 </span>
             )}

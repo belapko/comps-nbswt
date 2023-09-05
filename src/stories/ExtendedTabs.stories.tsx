@@ -58,6 +58,28 @@ const ExtendedTabsExample = ({theme}) => {
                 name: 'test3',
                 onClick: () => {},
             } as ITab,
+            {
+                name: 'Администраторы',
+                onClick: () => {},
+                menu: [
+                    {
+                        name: 'Задачи',
+                        onClick: () => {},
+                    },
+                    {
+                        name: 'График дежурств',
+                        onClick: () => {},
+                    },
+                    {
+                        name: 'Списки дел',
+                        onClick: () => {},
+                    },
+                    {
+                        name: 'Администраторы',
+                        onClick: () => {},
+                    }
+                ],
+            } as Itab,
         ])
     }, []);
 

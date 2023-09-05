@@ -1,5 +1,9 @@
 import React, { FC } from 'react';
 import '../../index.css';
+type SubTab = {
+    name: string;
+    onClick: () => void;
+};
 export interface ITab {
     id?: number;
     isCanClosed?: boolean;
@@ -8,7 +12,7 @@ export interface ITab {
     setWindowTitle?: () => void;
     isIconFirst?: boolean;
     colorsSettings?: object;
-    menu?: object[];
+    menu?: SubTab[];
     path: string;
     name: string;
     onClick: () => void;

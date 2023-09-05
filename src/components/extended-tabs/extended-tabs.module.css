@@ -19,14 +19,11 @@
 
 .tab {
     min-width: 50px;
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    justify-content: space-between;
+    display: block;
+    padding: 5px 15px;
     text-decoration: none;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    padding: 5px;
     font-size: var(--font-medium);
     cursor: pointer;
     transition: all ease 0.2s;
@@ -60,14 +57,14 @@
     background-color: var(--accent-light);
 }
 
-.active {
-    cursor: default;
+.crossBox {
+    padding: 5px;
 }
 
 .cross {
+    position: absolute;
     z-index: 2;
     border-radius: 50%;
-    padding: 1px;
     background-color: transparent;
     font-weight: var(--font-bold);
     transition: all ease 0.2s;
@@ -79,5 +76,43 @@
 }
 
 .cross.dark:hover {
+    background-color: var(--secondary-dark-lighter);
+}
+
+.subMenu {
+    display: none;
+    position: absolute;
+    margin-top: 5px;
+    padding: 5px;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.tab:hover .subMenu {
+    display: block;
+}
+
+.subMenu.light {
+    border: 1px solid var(--secondary-light-lighter);
+    border-top: none;
+}
+
+.subMenu.dark {
+    border: 1px solid var(--secondary-dark-lighter);
+    border-top: none;
+}
+
+.subMenuTab {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subMenuTab.light:hover {
+    background-color: var(--secondary-light-lighter);
+}
+
+.subMenuTab.dark:hover {
     background-color: var(--secondary-dark-lighter);
 }
